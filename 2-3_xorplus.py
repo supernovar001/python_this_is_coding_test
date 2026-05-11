@@ -1,17 +1,14 @@
-S = input()
-big_number = int(S[0])
+data = input()
 
-for i in range(0, len(S)-2) :
-	if int(S[i]) == 0 or int(S[i]) == 1 :
-		big_number += int(S[i+1])
+# 첫번째 문자를 숫자로 변경하여 대입한다
+result = int(data[0])
+for i in range(1, len(data)):
+    num = int(data[i])
+    if num <=1 or result <=1 :
+        result += num
+    else :
+        result *= num
+print(result)
 
-	else :
-		big_number *= int(S[i+1])
-		#print(big_number)
-
-if S[len(S)-1] == '0' or S[len(S)-1] == '1' :
-	big_number += int(S[len(S)-1])
-else :
-    big_number *= int(S[len(S)-1])  
-
-print(big_number)
+# input : 02984
+# output : 576
